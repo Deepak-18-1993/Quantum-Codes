@@ -6,7 +6,7 @@
 #PBS -l nodes=2:ppn=8
 # for example 16 processors 8 in each node
 #PBS -q xeon2650                      
-# xeon2650 is the 
+# xeon2650 is the node
 # Choose a reasonable h:m:s,  this is the same as
 # the number after -np in mpirun. It is set to 4 as an example. The number of processors
 
