@@ -1,0 +1,63 @@
+&CONTROL
+    calculation   = "vc-relax"
+    forc_conv_thr =  1.00000e-04
+    max_seconds   =  1.72800e+05
+    nstep         = 100
+    pseudo_dir    = ./"
+/
+
+&SYSTEM
+    a           =  1.18764e+01
+    degauss     =  1.00000e-02
+    ecutrho     =  6.37577e+02
+    ecutwfc     =  3.91349e+01
+    ibrav       = 2
+    nat         = 16
+    ntyp        = 2
+    occupations = "smearing"
+    smearing    = "gaussian"
+/
+
+&ELECTRONS
+    conv_thr         =  1.00000e-06
+    electron_maxstep = 200
+    mixing_beta      =  7.00000e-01
+    startingpot      = "atomic"
+    startingwfc      = "atomic+random"
+/
+
+&IONS
+    ion_dynamics = "bfgs"
+/
+
+&CELL
+    cell_dofree    = "all"
+    cell_dynamics  = "bfgs"
+    press          =  4.00000e-02
+    press_conv_thr =  5.00000e-03
+/
+
+K_POINTS {automatic}
+ 2  2  2  0 0 0
+
+ATOMIC_SPECIES
+Cd    112.41100  Cd.pbesol-dn-rrkjus_psl.0.3.1.UPF
+S      32.06600  s_pbesol_v1.4.uspp.F.UPF
+
+ATOMIC_POSITIONS {angstrom}
+Cd      0.000000   0.000000   0.000000
+S      -4.453658   4.453659   4.453659
+Cd     -2.969105   2.969105   0.000000
+S      -7.422763   7.422764   4.453659
+Cd      0.000000   2.969105   2.969105
+S      -4.453658   7.422764   7.422764
+Cd     -2.969105   5.938210   2.969105
+S      -7.422763  10.391869   7.422764
+Cd     -2.969105   0.000000   2.969105
+S      -7.422763   4.453659   7.422764
+Cd     -5.938210   2.969105   2.969105
+S     -10.391868   7.422764   7.422764
+Cd     -2.969105   2.969105   5.938210
+S      -7.422763   7.422764  10.391869
+Cd     -5.938210   5.938210   5.938210
+S     -10.391868  10.391869  10.391869

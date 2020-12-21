@@ -1,0 +1,36 @@
+&control
+    calculation = 'cp'
+    restart_mode = 'restart'
+    prefix = 'CdS'
+    outdir = './outdir'
+    pseudo_dir = './'
+    nstep=100000, iprint=10, isave=100,
+    dt=10.0,
+    ndr=50, ndw=51,        ! folder for reading and writing
+    tstress=.true., tprnfor=.true.
+    etot_conv_thr= 1.d-9
+    ekin_conv_thr= 1.d-7
+/
+&system
+    ibrav=1, celldm(1)=10.99,
+    nat=2, ntyp=2,
+    ecutwfc=50, ecutrho=400
+    nr1b=20, nr2b=20, nr3b=20,  !For US PP specify no. of points for FFT of aug. charge
+/
+&electrons
+    electron_dynamics='damp', electron_damping=0.1,
+    
+    orthogonalization='ortho', ortho_eps=1d-11
+/
+&ions
+    ion_dynamics='none'
+    tranp = .true.       ! randomize atomic positions             
+    amprp = 0.1         ! displacement amplitude for the randomization
+/
+ATOMIC_SPECIES
+Cd    112.41100  Cd.pbe-dn-rrkjus_psl.0.3.1.UPF
+S      32.06600  s_pbe_v1.4.uspp.F.UPF
+
+ATOMIC_POSITIONS {crystal}
+Cd      0.000000   0.000000   0.000000
+S       0.25000    0.250000   0.250000

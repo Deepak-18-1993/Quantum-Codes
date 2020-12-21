@@ -1,0 +1,13 @@
+&inputpp 
+  prefix = 'CdS'      
+  fileout = 'CdS.axsf'
+  lcharge = .FALSE.        
+  lforces = .FALSE.        
+  ldynamics = .t.      
+  nframes = 100             
+  nsp = 2                 
+  nat(1) = 1 
+  nat(2) = 1 
+  species(1) = 112
+  species(2) = 32
+/

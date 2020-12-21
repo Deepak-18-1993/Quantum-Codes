@@ -1,0 +1,60 @@
+&CONTROL
+    calculation = "vc-md"
+   
+    dt          =  20
+    max_seconds =  6.04800e+05
+    nstep       = 1000
+    pseudo_dir  = "./"
+    outdir      = "./outdir_1bar_"
+/
+
+&SYSTEM
+    a           =  5.821e+00
+    degauss     =  1.00000e-02
+    ecutrho     =  6.37577e+02
+    ecutwfc     =  3.91349e+01
+    ibrav       = 2
+    nat         = 8
+    nosym       = .TRUE.
+    ntyp        = 2
+    occupations = "smearing"
+    smearing    = "gaussian"
+/
+
+&ELECTRONS
+    conv_thr         =  1.00000e-06
+    electron_maxstep = 200
+    mixing_beta      =  7.00000e-01
+    startingpot      = "atomic"
+    startingwfc      = "atomic+random"
+/
+
+&IONS
+   ion_dynamics    = "beeman"
+    ion_temperature = "not_controlled"   ! tempw           =  3.00000e+02
+/
+
+&CELL
+    cell_dofree   = "all"
+    cell_dynamics = "pr"
+    press         =  50
+/
+
+K_POINTS {automatic}
+ 4  4  4  0 0 0
+
+ATOMIC_SPECIES
+Cd    112.41100  Cd.pbesol-dn-rrkjus_psl.0.3.1.UPF
+S      32.06600  s_pbesol_v1.4.uspp.F.UPF
+
+ATOMIC_POSITIONS {angstrom}
+Cd      0.000000   0.000000   0.000000
+Cd      0.000000   2.970417   2.970417
+Cd      2.970417   0.000000   2.970417
+Cd      2.970417   2.970417   0.000000
+S       1.485209   1.485209   4.455626
+S       1.485209   4.455626   1.485209
+S       4.455626   1.485209   1.485209
+S       4.455626   4.455626   4.455626
+
+

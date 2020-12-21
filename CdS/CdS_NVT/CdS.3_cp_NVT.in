@@ -1,0 +1,34 @@
+&control
+    calculation = 'cp'
+    restart_mode = 'reset_counters'
+    prefix = 'CdS'
+    outdir = './outdir'
+    pseudo_dir = './'
+    nstep=10000, iprint=50, isave=100,
+    dt=5.0,
+    ndr=51, ndw=52,        ! folder for reading and writing
+/
+&system
+    ibrav=1, celldm(1)=10.99, 
+    nat=2, ntyp=2,
+    ecutwfc=50, ecutrho=400
+    nr1b=20, nr2b=20, nr3b=20,  !For US PP specify no. of points for FFT of aug. charge
+/
+&electrons
+    electron_dynamics = 'verlet'         
+    electron_velocities = 'zero'
+    
+    orthogonalization='ortho', ortho_eps=1d-11
+/
+&ions
+    ion_dynamics = 'verlet'  
+    ion_velocities = 'zero'       
+    ion_temperature = 'nose', tempw = 100.0 , fnosep = 30
+/
+ATOMIC_SPECIES
+Cd    112.41100  Cd.pbe-dn-rrkjus_psl.0.3.1.UPF
+S      32.06600  s_pbe_v1.4.uspp.F.UPF
+
+ATOMIC_POSITIONS {crystal}
+Cd      0.000000   0.000000   0.000000
+S       0.25000    0.250000   0.250000
