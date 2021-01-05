@@ -1,0 +1,33 @@
+#!/bin/bash
+#PBS -j oe 
+#PBS -m abe 
+#PBS -M deepakks@iisc.ac.in
+#PBS -l walltime=24:0:0 
+#PBS -l nodes=1:ppn=16
+#PBS -q amd6234
+ 
+# Choose a reasonable h:m:s, and set N not larger than 8; this is the same as
+# the number after -np in mpirun. It is set to 4 as an example. The number of
+# nodes must be 1.
+
+# Run this in the command line as
+# qsub qejob.pbs
+
+cd $PBS_O_WORKDIR
+
+QEPATH=/home/deepakks/Quantum/bin/
+source /opt/intel2019u5/bin/compilervars.sh intel64
+
+echo -n "On node"; hostname
+echo -n "Job start: "; date
+echo "-----------------"
+# Set the N value to be same with the PBS line above
+# Set the arguments QE as appropriate
+# mpirun -np 4 pw.x < CdS.vcmd4gp.in > CdS.vcmd4gp.out
+
+mpirun -np 16 $QEPATH/pw.x < CdS.vcmd5gpa.in > CdS.vcmd5gpa.out
+# mpirun -np 8 ~/Quantum/bin/pw.x  relax.in > relax.out
+echo "-----------------"
+echo -n "Job end:   "; date
+
+
