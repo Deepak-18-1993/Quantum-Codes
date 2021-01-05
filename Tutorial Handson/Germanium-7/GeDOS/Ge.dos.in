@@ -1,0 +1,10 @@
+&dos
+prefix = 'Ge',
+outdir = './',
+ngauss = 0,
+!degauss = 0.003, ! in Ry units
+DeltaE = 0.05,
+fildos = 'dos.dat',
+Emin = -15,
+Emax = 20
+/

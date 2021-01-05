@@ -1,0 +1,9 @@
+&dos
+  prefix = 'Al',
+  outdir = './',
+  ngauss = 0,
+  degauss = 0.008,
+  DeltaE = 0.001,
+  fildos = 'dos.dat'
+  Emin = -15, Emax = 20
+/

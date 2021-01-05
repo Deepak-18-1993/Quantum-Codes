@@ -1,0 +1,21 @@
+Exercise 1:As mentioned above, change the force convergence criterion and observe how many iterations are taken for
+relaxation to complete
+
+Result:
+Instead of 16 iterations the new calculation gives the following output:
+
+ bfgs converged in  23 scf cycles and  21 bfgs steps
+     (criteria: energy <  1.0E-04, force <  1.0E-06)
+
+Exercise 2:Try the lattice optimization and the convergence tests for this surface. You will have to replace the calculations
+field in &SYSTEM card from "relax" to "scf" and then run the tests.
+
+Result: In folder Exercise2
+
+Exercise 3: Subsequent to this, rerun the relaxation calculation and report the final energy, with the converged set of pa-
+rameters
+
+Result:
+ Witout converged parameters  Final energy   =     -28.9485277447 Ry
+ With Converged parameters    Final energy   =     -29.0005146113 Ry
+

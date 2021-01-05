@@ -1,0 +1,37 @@
+
+ /
+&CONTROL
+calculation = "relax", ! This signifies the relaxation calculation
+pseudo_dir = "./",
+outdir = "./",
+/
+&SYSTEM
+ibrav = 6, ! This signifies tetragonal unit cell
+celldm(1) = 5.3033D0, ! The lattice parameter, a
+celldm(3) = 8.D0, ! c/a, c is along the vertical axis
+nat = 7,
+ntyp = 1,
+ecutwfc = 12.D0,
+occupations = "smearing",
+smearing = "gaussian",
+degauss = 0.05D0,
+/
+&ELECTRONS
+conv_thr = 1.D-6,
+mixing_beta = 0.3D0,
+/
+&IONS
+ion_dynamics='bfgs' ! This specifies the algorithm used for relaxation of the atoms
+/
+ATOMIC_SPECIES
+Al 26.9815385 Al.UPF
+ATOMIC_POSITIONS
+Al 0.5000000 0.5000000 -2.121320
+Al 0.0000000 0.0000000 -1.414213
+Al 0.5000000 0.5000000 -0.707107
+Al 0.0000000 0.0000000 0.000000
+Al 0.5000000 0.5000000 0.707107
+Al 0.0000000 0.0000000 1.414213
+Al 0.5000000 0.5000000 2.121320
+K_POINTS {automatic}
+6 6 1 0 0 0

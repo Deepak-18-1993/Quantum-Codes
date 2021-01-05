@@ -1,0 +1,8 @@
+#  the Fermi energy is     8.0823 ev
+plotband.dat
+
+-7 27
+Al.bands.xmgr
+Si.bands.ps
+8.0823
+2 8.0823

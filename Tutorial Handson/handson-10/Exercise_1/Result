@@ -1,0 +1,5 @@
+Instead of 16 iterations the new calculation gives the following output:
+
+ bfgs converged in  23 scf cycles and  21 bfgs steps
+     (criteria: energy <  1.0E-04, force <  1.0E-06)
+
