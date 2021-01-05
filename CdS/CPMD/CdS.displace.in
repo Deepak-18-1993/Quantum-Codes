@@ -1,0 +1,54 @@
+&control
+    calculation = 'cp'
+    restart_mode='restart'
+    prefix = 'CdS'
+    outdir = './outdir'
+    pseudo_dir = '~/Quantum/pseudo'
+    nstep=500, iprint=10, isave=100,
+    dt=5.0,
+    ndr=50, ndw=51,        ! folder for reading and writing
+    tstress=.true., tprnfor=.true.
+   
+/
+&system
+    a           =  1.16313e+01
+    ecutwfc     =  6.00000e+02
+    ibrav       = 2
+    nat         = 16
+    ntyp        = 2
+
+   
+   nr1b=20, nr2b=20, nr3b=20,  !For US PP specify no. of points for FFT of aug. charge
+/
+&electrons
+    electron_dynamics='damp', electron_damping=0.05,
+    emass=400.,
+    orthogonalization='ortho',
+/
+&ions
+    ion_dynamics='none'
+    tranp = .true.       ! randomize atomic positions             
+    amprp = 0.03         ! displacement amplitude for the randomization
+/
+
+ATOMIC_SPECIES
+Cd    112.41100  Cd.pbesol-dn-rrkjus_psl.0.3.1.UPF
+S      32.06600  s_pbesol_v1.4.uspp.F.UPF
+
+ATOMIC_POSITIONS {alat}
+Cd     -1.005338   0.000000   0.005338  1  1  1  
+S      -0.130338   0.125000   0.130338  1  1  1
+Cd     -0.255339   0.250000   0.005338  1  1  1  
+S      -0.380339   0.375001   0.130338  1  1  1
+Cd     -0.005338   0.250000   0.255339  1  1  1
+S      -0.130338   0.375001   0.380339  1  1  1
+Cd     -0.255339   0.500001   0.255339  1  1  1
+S      -0.380339   0.625001   0.380339  1  1  1
+Cd     -0.255339   0.000000   0.255339  1  1  1
+S      -0.380339   0.125000   0.380339  1  1  1
+Cd     -0.505339   0.250000   0.255339  1  1  1 
+S      -0.630339   0.375001   0.380339  1  1  1 
+Cd     -0.755339   0.750001   0.505339  1  1  1
+S      -0.380339   0.375001   0.630339  1  1  1 
+Cd     -0.505339   0.500001   0.505339  1  1  1
+S      -0.630339   0.625001   0.630339  1  1  1
