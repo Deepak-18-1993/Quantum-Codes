@@ -1,2 +1,2 @@
-# Quantum-Codes-Quantum-Expresso-Tutorial-Project
-Tutorials about Quantum Expresso- DFT codes including input and output files
+# Quantum-Codes-Quantum-Expresso-Project
+Quantum Expresso- DFT codes including input and output files
