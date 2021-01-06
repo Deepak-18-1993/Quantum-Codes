@@ -1,0 +1,28 @@
+ &control
+    calculation='bands'
+    pseudo_dir = './',
+    outdir='./',
+    prefix='sil'
+ /
+ &system
+    ibrav=  2, celldm(1) =10.26, nat=  2, ntyp= 1,
+    ecutwfc =50, nbnd=8
+ /
+ &electrons
+    conv_thr =  1.0d-8
+    mixing_beta = 0.7
+    diagonalization='david'
+ /
+ATOMIC_SPECIES
+ Si  28.0855  Si.pz-vbc.UPF
+ATOMIC_POSITIONS
+ Si 0.00 0.00 0.00
+ Si 0.25 0.25 0.25
+K_POINTS {crystal_b}
+6
+ 0.500  0.500  0.500  30 !L
+ 0.000  0.000  0.000  30 !G 
+ 0.500  0.000  0.500  30 !X
+ 0.625  0.250  0.625  30 !U
+ 0.375  0.375  0.750  30 !K
+ 0.000  0.000  0.000  30 !G 

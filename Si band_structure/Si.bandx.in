@@ -1,0 +1,5 @@
+&BANDS
+  prefix="sil"
+  outdir="./"
+  filband="Bandx.dat"
+/
