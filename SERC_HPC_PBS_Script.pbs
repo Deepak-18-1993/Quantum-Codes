@@ -1,9 +1,9 @@
 #!/bin/bash
  
-#PBS -N ZnS_relax.in
-#PBS -M deepakks@iisc.ac.in
+#PBS -N Name
+#PBS -M EmailID
 #PBS -l walltime=1:00:00
-#PBS -l select=1:ncpus=12
+#PBS -l select=10:ncpus=24
 #PBS -l place=scatter
 #PBS -l accelerator_type="None"
 #PBS -S /bin/sh@sdb -V
@@ -24,4 +24,5 @@ export ESPRESSO_TMPDIR=$PBS_O_WORKDIR
 
 # Run the Quantum Espresso executable "pw.x"
 
-aprun -j 1 -n 12 -N 12 pw.x < ZnS_relax.in > ZnS_relax.out
+aprun -j 1 -n 240 -N 24 pw.x < ZnS_relax.in > ZnS_relax.out
+//Using 240 MPI processes and 24 MPI processes per node
