@@ -1,0 +1,27 @@
+#!/bin/bash
+ 
+#PBS -N ZnS_relax.in
+#PBS -M deepakks@iisc.ac.in
+#PBS -l walltime=1:00:00
+#PBS -l select=1:ncpus=12
+#PBS -l place=scatter
+#PBS -l accelerator_type="None"
+#PBS -S /bin/sh@sdb -V
+
+# Make sure any symbolic links are resolved to absolute path
+export PBS_O_WORKDIR=$(readlink -f $PBS_O_WORKDIR)
+
+# Change to the directory that the job was submitted from
+cd $PBS_O_WORKDIR
+
+# Load the Quantum Espresso module
+module load espresso/6.5/gcc/8.3.0
+. /opt/modules/default/init/sh
+
+# Make sure temporary files go to the /work filesystem
+export TMPDIR=$PBS_O_WORKDIR
+export ESPRESSO_TMPDIR=$PBS_O_WORKDIR
+
+# Run the Quantum Espresso executable "pw.x"
+
+aprun -j 1 -n 12 -N 12 pw.x < ZnS_relax.in > ZnS_relax.out
